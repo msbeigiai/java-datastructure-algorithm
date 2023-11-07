@@ -12,6 +12,14 @@ public class LinkedList {
         public Node(int value) {
             this.value = value;
         }
+
+        @Override
+        public String toString() {
+            return "Node{" +
+                    "value=" + value +
+                    ", next=" + next +
+                    '}';
+        }
     }
 
     public LinkedList(int value) {
@@ -41,6 +49,25 @@ public class LinkedList {
         length++;
     }
 
+    public Node removeLast() {
+        if (length == 0) return null;
+
+        Node temp = head;
+        Node pre = head;
+        while (temp.next != null) {
+            pre = temp;
+            temp = temp.next;
+        }
+        tail = pre;
+        tail.next = null;
+        length--;
+        if (length == 0) {
+            head = null;
+            tail = null;
+        }
+        return temp;
+    }
+
     public void getHead() {
         System.out.println("Head: " + head);
     }
@@ -51,6 +78,15 @@ public class LinkedList {
 
     public void getLength() {
         System.out.println("Length: " + length);
+    }
+
+    @Override
+    public String toString() {
+        return "LinkedList{" +
+                "head=" + head +
+                ", tail=" + tail +
+                ", length=" + length +
+                '}';
     }
 }
 
