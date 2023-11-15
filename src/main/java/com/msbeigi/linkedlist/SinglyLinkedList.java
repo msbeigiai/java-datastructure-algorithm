@@ -1,6 +1,6 @@
 package com.msbeigi.linkedlist;
 
-public class LinkedList {
+public class SinglyLinkedList {
     private Node head;
     private Node tail;
     private int length;
@@ -22,7 +22,7 @@ public class LinkedList {
         }
     }
 
-    public LinkedList(int value) {
+    public SinglyLinkedList(int value) {
         Node newNode = new Node(value);
         head = newNode;
         tail = newNode;
