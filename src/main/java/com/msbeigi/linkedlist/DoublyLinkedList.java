@@ -35,6 +35,21 @@ public class DoublyLinkedList {
         length++;
     }
 
+    public Node removeLast() {
+        if (length == 0) return null;
+        Node temp = tail;
+        if (length == 1) {
+            head = null;
+            tail = null;
+        } else {
+            tail = tail.prev;
+            tail.next = null;
+            temp.prev = null;
+        }
+        length--;
+        return temp;
+    }
+
     public void printList() {
         Node temp = head;
         while (temp != null) {
@@ -42,6 +57,7 @@ public class DoublyLinkedList {
             temp = temp.next;
         }
     }
+
 
     public Node getHead() {
         return head;
