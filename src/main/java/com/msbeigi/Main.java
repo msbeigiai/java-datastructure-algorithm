@@ -1,18 +1,23 @@
 package com.msbeigi;
 
-import com.msbeigi.searching.BinarySearch;
-import com.msbeigi.sorting.BubbleSort;
-import com.msbeigi.sorting.SelectionSort;
-
-import java.util.Arrays;
+import com.msbeigi.list.IntList;
 
 public class Main {
     public static void main(String[] args) {
-        int[] unsorted = {65, 55, 45, 35, 25, 15, 10};
-        SelectionSort selectionSort = new SelectionSort(unsorted);
+        IntList intList = IntList.of(1, 2, 23);
+        System.out.println(intList.size());
+        System.out.println(intList);
 
-        var sorted = selectionSort.selectionSort();
 
-        System.out.println(Arrays.toString(sorted));
+        intList.insert(3, 88).insert(0, 11);
+        System.out.println(intList.size());
+        System.out.println(intList);
+
+        intList.pushBack(100);
+        System.out.println(intList);
+
+        intList.pushFront(200);
+        System.out.println(intList);
+
     }
 }
