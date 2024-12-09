@@ -1,35 +1,24 @@
 package com.msbeigi;
 
-import com.msbeigi.list.IntList;
+import com.msbeigi.list.IntQueue;
 
 public class Main {
     public static void main(String[] args) {
-        IntList intList = IntList.of(1, 2, 23);
-        System.out.println(intList.size());
-        System.out.println(intList);
+        IntQueue queue = new IntQueue();
 
+        queue.add(1).add(2).add(4);
 
-        intList.insert(3, 88).insert(0, 11);
-        System.out.println(intList.size());
-        System.out.println(intList);
+        System.out.println(queue);
 
-        intList.pushBack(100);
-        System.out.println(intList);
+        System.out.println(queue.head());
+        System.out.println(queue.tail());
 
-        intList.pushFront(200);
-        System.out.println(intList);
+        System.out.println(queue.take());
+        System.out.println(queue.take());
+        System.out.println(queue.take());
 
-        intList.remove(2);
-        System.out.println(intList);
+        System.out.println(queue);
         
-        intList.remove(0);
-        System.out.println(intList);
-
-        intList.removeFront();
-        System.out.println(intList);
-
-        intList.removeBack();
-        System.out.println(intList);
 
     }
 }
