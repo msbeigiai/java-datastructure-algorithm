@@ -19,5 +19,17 @@ public class Main {
         intList.pushFront(200);
         System.out.println(intList);
 
+        intList.remove(2);
+        System.out.println(intList);
+        
+        intList.remove(0);
+        System.out.println(intList);
+
+        intList.removeFront();
+        System.out.println(intList);
+
+        intList.removeBack();
+        System.out.println(intList);
+
     }
 }

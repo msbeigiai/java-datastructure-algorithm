@@ -49,12 +49,6 @@ public class IntList {
     return this;
   }
 
-  public IntList add(int value) {
-    int[] arr = new int[occupied + 1];
-    arr[0] = value;
-    return new IntList(new int[] {});
-  }
-
   private void assureCapacity() {
     if (array.length == occupied) {
       array = Arrays.copyOf(array, occupied + 1);
@@ -67,11 +61,15 @@ public class IntList {
     }
     assureCapacity();
 
-    int i = occupied - 1;
+    // int i = occupied - 1;
 
-    while (i >= index) {
-      array[i + 1] = array[i];
-      i--;
+    // while (i >= index) {
+    // array[i + 1] = array[i];
+    // i--;
+    // }
+
+    if (index != occupied) {
+      System.arraycopy(array, index, array, index + 1, occupied - index);
     }
 
     set(index, value);
@@ -88,13 +86,36 @@ public class IntList {
     return insert(0, value);
   }
 
+  public int remove(int index) {
+    if (index < 0 || index >= occupied) {
+      throw new IllegalArgumentException("Index is not allowable!: " + index);
+    }
+
+    int value = array[index];
+
+    for (int i = index; i < occupied - 1; i++) {
+      array[i] = array[i + 1];
+    }
+
+    occupied--;
+
+    return value;
+  }
+
+  public int removeFront() {
+    return remove(0);
+  }
+
+  public int removeBack() {
+    return remove(occupied - 1);
+  }
+
   public int size() {
     return occupied;
   }
 
   @Override
   public String toString() {
-    return Arrays
-        .toString(array);
+    return Arrays.toString(Arrays.copyOf(array, occupied));
   }
 }
