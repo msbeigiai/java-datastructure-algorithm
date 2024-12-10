@@ -1,6 +1,5 @@
 package com.msbeigi.list;
 
-import java.util.Arrays;
 import java.util.NoSuchElementException;
 
 public class IntQueue {
