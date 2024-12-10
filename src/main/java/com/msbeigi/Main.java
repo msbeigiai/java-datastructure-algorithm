@@ -1,24 +1,17 @@
 package com.msbeigi;
 
-import com.msbeigi.list.IntQueue;
+import com.msbeigi.list.IntList;
+import com.msbeigi.list.IntStack;
 
 public class Main {
     public static void main(String[] args) {
-        IntQueue queue = new IntQueue();
+        IntList list = IntList.of(1, 2, 4, 3);
+        System.out.println(list.size());
+        System.out.println(list);
 
-        queue.add(1).add(2).add(4);
-
-        System.out.println(queue);
-
-        System.out.println(queue.head());
-        System.out.println(queue.tail());
-
-        System.out.println(queue.take());
-        System.out.println(queue.take());
-        System.out.println(queue.take());
-
-        System.out.println(queue);
+        list.insert(4, 100);
+        System.out.println(list.size());
+        System.out.println(list);
         
-
     }
 }

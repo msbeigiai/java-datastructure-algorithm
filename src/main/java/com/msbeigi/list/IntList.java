@@ -61,13 +61,6 @@ public class IntList {
     }
     assureCapacity();
 
-    // int i = occupied - 1;
-
-    // while (i >= index) {
-    // array[i + 1] = array[i];
-    // i--;
-    // }
-
     if (index != occupied) {
       System.arraycopy(array, index, array, index + 1, occupied - index);
     }
